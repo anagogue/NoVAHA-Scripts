@@ -1,0 +1,9 @@
+Created by anagogue 2012_05
+
+This utility is to create longer passphrases for JTR based on word order probability. The hope is to use these as the base for mangling rules (this might require some hacking of john, though, which doesn't currently allow rules with --stdin).
+
+slang/: the directory containing all the downloaded slangvocabulary.com dictionary pages.
+
+slang.pl: Not an integral part of the tool. Hard coded to read the dictionary pages downloaded from slangvocabulary.com and create a single flat word file of all entries for the tool itself to parse.
+
+phrase.pl: reads a file (supplied on the command line) and determines word probabilities. Creates passwords by mixing words according to order of probability. Give minimum and maximum length desired. Outputs to stdout, one pw per line.
